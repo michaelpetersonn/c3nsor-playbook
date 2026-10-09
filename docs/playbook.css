@@ -138,6 +138,27 @@ body {
   line-height: 1.65;
 }
 
+.pb-quick-label { margin-top: 36px; }
+.pb-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pb-quick a {
+  display: inline-flex;
+  padding: 12px 15px;
+  border: 1px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font: 11px "DM Mono", monospace;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.pb-quick a:hover { background: #fff; color: var(--ink); }
+
 /* —— Layout —— */
 .pb-layout {
   display: grid;
@@ -275,6 +296,17 @@ body {
   line-height: 1.7;
 }
 .pb-content strong { color: var(--ink); }
+.pb-content :not(pre) > code {
+  padding: 1px 5px;
+  background: #f1f1f1;
+  color: var(--ink);
+  font: .88em "DM Mono", monospace;
+  overflow-wrap: anywhere;
+}
+.pb-terms dt a { color: var(--ink); text-underline-offset: 3px; text-transform: none; }
+.pb-terms dt a:hover { color: var(--accent); }
+.pb-steps a,
+.pb-terms dd a { color: var(--ink); text-underline-offset: 3px; }
 .pb-content p a { color: var(--ink); text-underline-offset: 3px; }
 .pb-content p a:hover { color: var(--accent); }
 
@@ -431,6 +463,8 @@ footer .brand-mark { min-width: 34px; height: 34px; font-size: 15px; }
     border-bottom: 1px solid var(--line);
   }
   .toc-toggle:not([hidden]) { display: flex; }
+  .js .pb-content h2,
+  .js .pb-content h3 { scroll-margin-top: calc(var(--header-h) + 84px); }
   .js .pb-toc .toc-heading { display: none; }
   .js .pb-toc .toc-list { display: none; }
   .js .pb-toc.is-open .toc-list {
