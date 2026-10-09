@@ -178,6 +178,7 @@
                 <li><a href="#secret-storage-and-access">Secret storage and access</a></li>
                 <li><a href="#detect-and-respond-to-exposed-secrets">Detect and respond to exposed secrets</a></li>
                 <li><a href="#monitoring-and-incident-ownership">Monitoring and incident ownership</a></li>
+                <li><a href="#meeting-security">Meeting security</a></li>
                 <li><a href="#new-hire-and-departure-checklist">New hire and departure checklist</a></li>
                 <li><a href="#planned-aws-migration">Planned: AWS migration</a></li>
               </ol>
@@ -655,6 +656,15 @@ curl -s -H "Origin: https://michael-peterson.com" \
             <div><dt>Alert channels</dt><dd>GitHub email notifications for failed workflow runs, Dependabot alerts, and secret-scanning alerts.</dd></div>
             <div><dt>Where to look</dt><dd>GitHub Actions run logs for the site; the Cloudflare dashboard (Workers &amp; Pages, Metrics) and <code>npx wrangler tail</code> for live proxy logs.</dd></div>
             <div><dt>Response</dt><dd>Acknowledge within one business day. For suspected data exposure, contain and revoke credentials first, preserve evidence, then decide follow-up.</dd></div>
+          </dl>
+          <h3 id="meeting-security">Meeting security</h3>
+          <p>All Scrum events use one recurring Zoom meeting, c3nsor Scrum. Its link is in the calendar invites only; never post it in the playbook, the public Trello board, the repository, or screenshots.</p>
+          <dl class="pb-terms">
+            <div><dt>Built-in controls</dt><dd>Passcode required, every participant waits in the Waiting Room until the host admits them, and nobody can join before the host.</dd></div>
+            <div><dt>During the meeting</dt><dd>Admit only people you recognize. Once everyone is in, choose Security, then Lock Meeting. Do not share screens showing secrets, tokens, or tester data.</dd></div>
+            <div><dt>Recording</dt><dd>Record or transcribe only with everyone’s consent, and keep recordings out of the repository.</dd></div>
+            <div><dt>User tests</dt><dd>Schedule a separate one-time meeting for each tester session. Never give testers the team link.</dd></div>
+            <div><dt>If the link leaks</dt><dd>In Zoom, open Meetings, then c3nsor Scrum, then Edit, and set a new passcode. The old link stops working; send the new one through updated calendar invites.</dd></div>
           </dl>
           <h3 id="new-hire-and-departure-checklist">New hire and departure checklist</h3>
           <p><strong>Onboarding:</strong> grant GitHub Write access, Trello board membership, and Cloudflare or Chrome Web Store access only if the work needs it; require two-factor authentication; complete the Section 2 setup and pass <code>npm run ci</code>; turn on “Include administrators” in branch protection once a second reviewer exists. <strong>Offboarding:</strong> remove the GitHub collaborator, Trello membership, Cloudflare membership, and Chrome Web Store access; transfer card ownership; and rotate any shared credential the person could access.</p>
